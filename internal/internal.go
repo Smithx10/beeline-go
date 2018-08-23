@@ -38,13 +38,6 @@ package internal
 // // but that downstream service should create a trace of its own (that shares the
 // // trace ID so it will be unified in the Honeycomb UI) with its own spans.
 
-var GlobalConfig Config
-
-type Config struct {
-	SamplerHook func(map[string]interface{}) (bool, int)
-	PresendHook func(map[string]interface{})
-}
-
 // // Trace holds fields relevant to the entire trace - a list of spans, a list of
 // // trace level fields, and so on.  The trace does not know what the "current"
 // // span is, since there can be multiple current spans when dealing with
